@@ -1,3 +1,7 @@
+def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
 print("===============================")
 print(" RULES ")
 print("===============================")
@@ -53,7 +57,10 @@ while True:
         print("Invalid input! Starting over.")
         continue
 
-    result = "Not implemented yet."
+        if choice == '+':
+        result = add(num1, num2)
+    else:
+        result = "Not implemented yet."
 
     if isinstance(result, str):
         print(result)
