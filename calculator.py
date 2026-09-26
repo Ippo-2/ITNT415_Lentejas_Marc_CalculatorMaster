@@ -9,6 +9,10 @@ def subtract(a, b):
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero is not allowed."
+    return a / b
 
 print("===============================")
 print(" RULES ")
@@ -56,17 +60,7 @@ while True:
         continue
 
     user_input2 = input("Second number: ").strip().lower()
-    if user_input2 == 'q':
-
-    if choice == '+':
-        result = add(num1, num2)
-    elif choice == '-':
-        result = subtract(num1, num2)
-    elif choice == '*':
-        result = multiply(num1, num2)
-    else:
-        result = "Not implemented yet."
-
+    if user_input2  == 'q':
         print("Goodbye!")
         break
     try:
@@ -75,10 +69,15 @@ while True:
         print("Invalid input! Starting over.")
         continue
 
-        if choice == '+':
+    if choice == '+':
         result = add(num1, num2)
-    else:
-        result = "Not implemented yet."
+    elif choice == '-':
+        result = subtract(num1, num2)
+    elif choice == '*':
+        result = multiply(num1, num2)
+    elif choice == '/':
+        result = divide(num1, num2)
+
 
     if isinstance(result, str):
         print(result)
